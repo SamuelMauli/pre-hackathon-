@@ -1,24 +1,19 @@
-function openLoginPopup() {
-    document.getElementById('loginPopup').style.display = 'block';
-}
+let btn = document.querySelector('.fa-eye'); 
 
+btn.addEventListener('click', () => {
+    let inputSenha = document.querySelector('#senha'); 
 
-document.getElementById('loginForm').addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    var login = document.getElementById('login').value;
-    var senha = document.getElementById('senha').value;
-
-    if (login === "admin" && senha === "admin") {
-        alert("Acesso liberado!");
-        closeLoginPopup();
-        window.location.href = "home.html";
+    if (inputSenha.getAttribute('type') === 'password') {
+        inputSenha.setAttribute('type', 'text'); 
     } else {
-        alert("Acesso negado! Verifique seu usuário e senha.");
+        inputSenha.setAttribute('type', 'password');
     }
 });
 
-window.addEventListener('load', function () {
-    var notification = document.getElementById('notification');
-    notification.style.display = 'block';
-});
+function entrar() {
+    let usuario = document.querySelector('#usuario');
+    let userlabel = document.querySelector('#admin');
+
+    let senha = document.querySelector('#senha');
+    let senhalabel = document.querySelector('#admin');
+}

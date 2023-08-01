@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="ContatoEstilo.css" rel="stylesheet" media="all" />
+    <script src="JavaScript1.js"></script>
+    <title>Tela de login</title>
+    <style>
+        body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, rgb(106, 0, 255), rgb(1, 1, 1));
+    }
+form{
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: #fff;
+    }
+
+    img {
+        animation: ladoSecao .5s ease-in-out forwards;
+        max-width: 100%;
+        border-radius: 4px;
+        filter: blur(0);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        
+        grid-row: auto; 
+    }
+    
+    
+h1{
+    color: rgb(130, 51, 241);
+    font-size: 40px;
+    }
+    
+input{
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    }
+button{
+    background-color: dodgerblue;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+        
+}
+
+button:hover{
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+    </style>
+
+
+</head>
+
+<body>
+
+<img src="Logo.png" alt="logo">
+
+<form id="loginForm">
+    <h1>Login</h1>
+    <input type="text" placeholder="Login" id="login">
+    <br><br>
+    <input type="password" placeholder="Senha" id="senha">
+    <br><br>
+    <button type="submit" oneclick="logar()">Enviar</button>
+</form>
+
+</body>
+</html>
