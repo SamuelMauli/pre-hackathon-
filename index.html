@@ -1,24 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylehome.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="ContatoEstilo.css" rel="stylesheet" media="all" />
-    <link href="notification.css" rel="stylesheet" media="all" />
-    <script src="notification.js"></script>
-    <title>Home</title>
-
-    
+    <link rel="stylesheet" href="style.css">
+    <title>Sistema de Aviso de Sinistro</title>
 </head>
-
 <body>
-    
-    <!-- Conteúdo da página home.html -->
-    <h1>Bem-vindo à Home</h1>
+    <header>
+        <div class="header-option" onclick="toggleOptionDetails('criarSinistroDetails')">Criar Sinistro</div>
+        <div class="header-option" onclick="toggleOptionDetails('listarSinistrosDetails')">Listar Sinistros</div>
+        <div class="header-option" onclick="toggleOptionDetails('editarSinistroDetails')">Editar Sinistro</div>
+        <div class="header-option" onclick="toggleOptionDetails('excluirSinistroDetails')">Excluir Sinistro</div>
+    </header>
 
-    <div id="notification" class="notification">Notificação</div>
+    <div class="main-container">
+        <h1>Sistema de Aviso de Sinistro</h1>
+
+        <div id="criarSinistro" class="criarSinistro" style="display: block;">
+            <h2>Criar Sinistro</h2>
+            <form action="/criar_sinistro" method="post">
+                <label for="data">Data do Sinistro:</label>
+                <input type="text" id="data" name="data" required><br>
+    
+                <label for="tipo">Tipo do Sinistro:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="Roubo/Furto">Roubo/Furto</option>
+                    <option value="Colisão">Colisão</option>
+                    <option value="Causas Naturais">Causas Naturais</option>
+                </select><br>
+    
+                <label for="local">Local do Sinistro:</label>
+                <input type="text" id="local" name="local" required><br>
+    
+                <input type="submit" value="Criar">
+            </form>
+        </div>    
+        
+        <div id="listarSinistros" class="listarSinistros" style="display: block;">
+            <h2>Listar Sinistros</h2>
+        <ul>
+            <!-- Aqui você pode exibir a lista de sinistros com dados vindo do servidor Python -->
+            <!-- Exemplo: <li>Data: 2023-08-01, Tipo: Colisão, Local: Rua A, 123, Bairro X, Cidade Y, Estado Z, País W</li> -->
+        </ul>
+    </div>
+    <div id="editarSinistros" class="editarSinistros" style="display: block;">
+        <h2>Editar Sinistro</h2>
+        <form action="/editar_sinistro" method="post">
+            <label for="index">Índice do Sinistro:</label>
+            <input type="number" id="index" name="index" required><br>
+
+            <label for="data_edit">Nova Data do Sinistro:</label>
+            <input type="text" id="data_edit" name="data_edit" required><br>
+
+            <label for="tipo_edit">Novo Tipo do Sinistro:</label>
+            <select id="tipo_edit" name="tipo_edit" required>
+                <option value="Roubo/Furto">Roubo/Furto</option>
+                <option value="Colisão">Colisão</option>
+                <option value="Causas Naturais">Causas Naturais</option>
+            </select><br>
+
+            <label for="local_edit">Novo Local do Sinistro:</label>
+            <input type="text" id="local_edit" name="local_edit" required><br>
+
+            <input type="submit" value="Editar">
+        </form>
+          
+    </div>
+
+        <div id="excluirSinistros" class="excluirSinistros" style="display: block;">
+            <h2>Excluir Sinistro</h2>
+        <form action="/excluir_sinistro" method="post">
+            <label for="index_delete">Índice do Sinistro:</label>
+            <input type="number" id="index_delete" name="index_delete" required><br>
+
+            <input type="submit" value="Excluir">
+        </form>
+
+        <div class="option-details" id="criarSinistroDetails">
+            <!-- Detalhes para a opção Criar Sinistro -->
+        </div>
+
+        <div class="option-details" id="listarSinistrosDetails">
+            <!-- Detalhes para a opção Listar Sinistros -->
+        </div>
+
+        <div class="option-details" id="editarSinistroDetails">
+            <!-- Detalhes para a opção Editar Sinistro -->
+        </div>
+
+        <div class="option-details" id="excluirSinistroDetails">
+            <!-- Detalhes para a opção Excluir Sinistro -->
+        </div>
+        </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
