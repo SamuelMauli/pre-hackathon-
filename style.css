@@ -8,6 +8,7 @@ body {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-radius: 200px 200px 200px 200px;
             background: #111;
             padding: 16px;
             position: fixed;
@@ -26,7 +27,25 @@ body {
         
         .header-option:hover {
             background-color: dodgerblue;
-        }
+        }body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .hidden {
+        display: none;
+    }
         
         h2 {
             font-size: 24px;
@@ -48,7 +67,7 @@ body {
             border-radius: 4px;
             border: 1px solid white;
             background-color: transparent;
-            color: #111;
+            color: white;
         }
 
         input[type="submit"] {
