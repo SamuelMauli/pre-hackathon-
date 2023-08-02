@@ -3,11 +3,20 @@ body {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     color: #000000;
-    background: linear-gradient(to bottom, rgb(255, 255, 255), rgb(24, 24, 24));
-    background-size: cover; /* Adiciona esta linha */
-    background-attachment: fixed; /* Adiciona esta linha */
+    background-color: rgb(189, 189, 189);
 }
 
+img {
+    animation: ladoSecao .5s ease-in-out forwards;
+    max-width: 100%;
+    border-radius: 4px;
+    filter: blur(0);
+    position: fixed; 
+    left: -15px;
+    bottom: -15px;
+    
+    grid-row: auto; 
+}
   
   h1 {
     color: rgb(0, 0, 0);
